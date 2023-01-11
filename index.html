@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="left-section">
+        <div class="cards">
+          <div class="front-card">
+            <img src="images/bg-card-front.png" alt="">
+            <div class="card-con">
+              <img class="card-logo" src="images/card-logo.svg" alt="">
+              <h1 id="number">1234 5678 9101 1121</h1>
+              <div class="card-info">
+                <span id="name">Jane Appleseed</span>
+                <span id="date">
+                  <span id="month">00</span>
+                  /
+                  <span id="year">00</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="back-card">
+            <img src="images/bg-card-back.png" alt="">
+            <span id="cvc">123</span> 
+          </div>
+        </div>
+      </div>
+      <div class="right-section">
+        <form>
+          <div class="grid-1">
+            <label for="card-name">Cardholder Name</label>
+            <input type="text" 
+            placeholder="e.g. Jane Appleseed" 
+            id="card-name"
+            required>
+          </div>
+          <div class="grid-2">
+            <label for="card-number">Card Number</label>
+            <input type="number" oninput="if(this.value,length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
+            minlength="16"
+            maxlength="16"
+            placeholder="e.g. 1234 5678 9123 0000"
+            id="card-number"
+            required>
+          </div>
+          <div class="card-infor">
+            <div id="card-date">
+              <label for="card-date">Exp. Date (MM/YY)</label>
+              <div class="two-inp">
+                <div>
+                  <input type="number"
+                  placeholder="MM"
+                  oninput="if(this.value,length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
+                  maxlength="2"
+                  minlength="2"
+                  id="card-month"
+                  required>
+                </div>
+                <div>
+                  <input type="number"
+                  placeholder="YY"
+                  oninput="if(this.value,length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
+                  maxlength="2"
+                  minlength="2"
+                  id="card-year"
+                  required>
+                </div>
+              </div>
+            </div>
+            <div class="grid-4">
+              <label for="card-cvc">CVC</label>
+              <input type="number"
+              oninput="if(this.value,length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
+              maxlength="3"
+              placeholder="e.g. 123"
+              id="card-cvc"
+              required>
+            </div>
+          </div>
+          <button id="sbmt-bttn" type="submit">Confirm</button>
+        </form>
+        <div class="thankdude hidden">
+          <img src="images/icon-complete.svg" alt="">
+          <h1 class="pay">Thank you for Paying!</h1>
+          <p>We've added your card details</p>
+          <button>Continue</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
